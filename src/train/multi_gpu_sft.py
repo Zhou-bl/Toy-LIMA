@@ -108,8 +108,17 @@ eval_set = datasets.load_dataset("tatsu-lab/alpaca_eval", "alpaca_eval")["eval"]
 
 def get_output(model, tokenizer, input):
     # input is a list of strings
+    system_prompt = open(args.system_prompt, 'r').read()
+    input = system_prompt + '\n' + "User: " + input + "Assistant: "
     input_ids = tokenizer(input, return_tensors="pt", padding=True, truncation=True).input_ids.cuda()
-    output_ids = model.generate(input_ids, max_length=1024, do_sample=True)
+    output_ids = model.generate(input_ids, 
+                                max_length=1024, 
+                                do_sample=True, 
+                                min_new_tokens=2, 
+                                max_new_tokens=256)
+    # print("input_ids:", input_ids)
+    # print("output_ids:", output_ids)
+    output_ids = output_ids[:,input_ids.shape[-1]:]
     output = tokenizer.batch_decode(output_ids, skip_special_tokens=True)[0]
     return output
 
@@ -122,7 +131,7 @@ def eval(model, tokenizer, file, epoch):
         try:
             output = get_output(model, tokenizer, instruction)
         except:
-            print("[Warning] get_output failed, instruction:", instruction)
+            print("[ERROR]!!!")
             output = ""
         json_list.append({"instruction": instruction, "output": output})
         with open(file+"/"+str(epoch)+".json", "w", encoding="utf-8") as f:
@@ -134,6 +143,7 @@ def train(model, tokenizer, data):
     model.train()
     loss_step, loss_epoch = [], []
     for epoch in range(args.epoch):
+        eval(model, tokenizer, args.eval, epoch)
         print("[INFO] Epoch {} begin".format(epoch))
         epoch_loss = 0
         for batch in tqdm.tqdm(data):
@@ -148,7 +158,6 @@ def train(model, tokenizer, data):
             model.step()
         loss_epoch.append(epoch_loss / len(data))
         print("[INFO] Epoch {} end, avg loss: {}".format(epoch, epoch_loss / len(data)))
-        eval(model, tokenizer, args.eval, epoch)
         model.save_pretrained(args.save_dir + '/epoch_{}'.format(epoch))
     
     plt.figure("Step loss")
