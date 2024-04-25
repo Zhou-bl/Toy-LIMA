@@ -646,5 +646,129 @@
     {
         "instruction": "Tell me something I don’t know",
         "output": "Why did the chicken cross the road? To get to the other side."
+    },
+    {
+        "instruction": "You are a script-writer. Write a script for the opening scene of a Miami-based dark comedy show which depicts a typical miami beach club called Beefy's Beach Club run buy a british man known by the Alias Beefy, and the pool bar staff are JdeG and a blonde british woman with the Alias SophieSnazz",
+        "output": "The opening scene of a Miami-based dark comedy show is as follows: \nWe hear the sound of breaking glass to enter the club; a whiteboard with the name \"Beefy's Beach Club\" written on it. Suddenly, a black Nissan car veers into view, followed by a Hispanic man who looks like a college student. The man opens a soda can and drags out a cigarette. With a heavy breath of air, he looks up at the ceiling and sips the water from a ice cube. Suddenly, a figure appears in the darkness, startling all the officers of the club. It is a black British man, and he looks like he is 21 years old."
+    },
+    {
+        "instruction": "Do you know something about the book  ＂the art of thinking clearly\" wrote by Rolf Dobelli?",
+        "output": "It is a book that offers tips and tricks to improve our ability to think clearly. Rolf Dobelli is a famous architect who won many awards for his designs. However, despite his success in the architectural field, he didn't start learning to think clearly until he went to university. So, the book is not仅有关于建筑方面的技巧，还涉及到其他方面的知识。"
+    },
+    {
+        "instruction": "antennas that transmit an equal amount of energy in the horizontal direction are called",
+        "output": " antennas that transmit an equal amount of energy in the horizontal direction are called dipole antennas."
+    },
+    {
+        "instruction": "write an introduction of a person for resume who worked as an in-house IT for 18 years, managed team of 4 and 9 site and satellite offices with total 200 users. He's familiar with network and system infrastructure, server virtualization, cloud services and the migration.",
+        "output": "My name is John and I have been an in-house IT for 18 years. I have managed a team of 4 and 9 site and satellite offices, with a total of 200 users. I am familiar with network and system infrastructure, server virtualization, cloud services and the migration of data."
+    },
+    {
+        "instruction": "Hi, I have a question about MFCC (mel frequency cepstral coefficients). Are they the same thing as a MEL-spectogram, or is there a difference?",
+        "output": "They are the same thing as a MEL-spectogram."
+    },
+    {
+        "instruction": "who was the black cabinet member who went on to play an important role in the civil rights movement",
+        "output": "Dr. Martin Luther King, Jr."
+    },
+    {
+        "instruction": "“One One was a race horse Two Two was one too. One One won one race. Two Two won one too.” How many horses are in this story?",
+        "output": "Four."
+    },
+    {
+        "instruction": "Over two thousand years, the moon has covered every point on the Earth once. At the most recent time of a moonrise, the moon is going to cover the next point to the north. How far north will it be?",
+        "output": "The north celestial pole is at 29.44 degrees. 20 degrees is one inch. 90 degrees is 0.3692 degrees. 29.44 degrees + 0.3692 degrees = 20.64 degrees. So, the moon will be 20.64 degrees north."
+    },
+    {
+        "instruction": "twenty names of famous horses and who they belonged to",
+        "output": "1. Pharior\n2. Numazu\n3. Kedgeree\n4. Griswold\n5. Sambo\n6. Bubba\n7. Chia\n8. Euclid\n9. Thales\n10. Pythagoras"
+    },
+    {
+        "instruction": "Write an interesting and detailed backstory for my half-elf ranger character for Pathfinder. The backstory should be dark and mysterious in tone but without the usual cliches like \"raiders attacked the village\". Make it unique and interesting. Be creative.",
+        "output": "The half-elf ranger had grown up in a small town in the heart of a large empire. His parents had given him all the money they had, plus a strange red flower. The flower would liven up the town in a way only a half-elf could. So he went forth, winging it through the city streets and beyond the castle walls. Wherever he went, he left a trail of fire behind him. And as he went deeper into theien, the trail grew longer."
+    },
+    {
+        "instruction": "In this math problem, we are asked to figure out the percentage of total profits that are made in each quarter. They are 90% in the first quarter, 92% in the second quarter, 81% in the third quarter and 88% in the fourth quarter. What is the total profit percent over a period of time, based upon these quarters?",
+        "output": "90% + 92% + 81% + 88% = 200%.\nSo, the total profit percent over a period of time is 200%."
+    },
+    {
+        "instruction": "Why is it a bad idea to give a mouse a cookie?",
+        "output": "A mouse is a small animal that is typically associated with bad habits. Giving a mouse a cookie is one way to teach it a lesson in responsibility and discipline. It is also one way to improve its behavior."
+    },
+    {
+        "instruction": "which second messenger molecule acts on the endoplasmic reticulum to release calcium ions",
+        "output": "2MSR1 is the second messenger molecule that acts on the endoplasmic reticulum to release calcium ions."
+    },
+    {
+        "instruction": "How can anti-deressants make people think or act suicidally? Suicidal thoughts or actions' are a side effect of every single anti-depressant I've seen. Is the medicine controlling your mind or something?",
+        "output": "Medicine can't-control your mind. The result of the medicines is that your thoughts and actions are likely to be irrational and harmful."
+    },
+    {
+        "instruction": "Create a lesson plan in two different levels: in CEFR A1 and A2 on the topic of friendship. Add a rubric.",
+        "output": "Lesson 1: Introduction and Expectations\nGrade 1: Friendship is the feeling of connection between two or more people. It is the shared experience of a common goal or challenge. In addition to language and skill development, friendship skills such as communication, empathy, and responsibility are important for success in school and beyond."
+    },
+    {
+        "instruction": "Draft a ministerial speech outlining the top five benefits that innovation brings to the Australian economy",
+        "output": "Good day, ladies and gentlemen.\n\nI am here to speak to you about the top five benefits that innovation brings to the Australian economy. These benefits are as follows:\n\n1. Creation of new jobs: Innovation leads to the creation of new jobs in various sectors, including technology, manufacturing, and sales. According to the Australian Bureau of Statistics, the number of jobs created after innovation is higher than the population.\n\n2. Economic growth: Innovation is a driver of economic growth. It creates new ideas, stimulate investment, and create new jobs. All these contribute to the overall growth of the economy.\n\n3. Redistribution of wealth: As innovation occurs, its attendant wealth creates new market opportunities for poor and vulnerable people. This, in turn, leads to the redistribution of wealth among the population.\n\n4. Sense of achievement: Innovation is a feeling of achievement. When people have new ideas, they feel a sense of responsibility to share them with the world. This, in turn, leads to the protection of private property and the improvement of social welfare.\n\n5. Global consciousness: Innovators think about the whole world instead of just their own backyard. This, in turn, leads to new ways of thinking about issues such as globalization, trade, and the role of nations in the world."
+    },
+    {
+        "instruction": "Is online casino legal in India?",
+        "output": "Yes, online casinos are legal in India."
+    },
+    {
+        "instruction": "Write a section for an award application detailing how photography has insipired you",
+        "output": "I have always been an admirer of the art of photography. Whether it be in the form of a picture taken at the dinner table or a quick snapshot of the day, I am always drawn to it. This is one of the reasons I love to take photos - I want to share these with you, my amazing audience."
+    },
+    {
+        "instruction": "I want to eventually become a plant/manufacturing/production manager, and eventually a Chief Operating Officer. What sort of experience and post-graduate education path would you recommend? Please provide non-obvious and atypical career paths leading to such positions, on top of the classic ones.",
+        "output": "Non-obvious and atypical career paths leading to such positions are:\n\n1. Start your own business"
+    },
+    {
+        "instruction": "explain the basics of area and perimeter",
+        "output": "Area represents the size of a parallelogram. A rectangle is its opposite. The area of a circle is its diameter."
+    },
+    {
+        "instruction": "Write a story about Anakin Skywalker encountering a Jedi who speaks and acts like a 1920s British aristocrat",
+        "output": "Anakin Skywalker had grown up in a middle-class English family. He had everything a common man should have: a decent education, a good job, a nice house. Until he met the girl next door."
+    },
+    {
+        "instruction": "what are the possible performance issues in a learning program on cross cultural communication",
+        "output": "1. Different cultural values and beliefs may clash with those of the target audience, leading to misinterpretation and misinformation.\n2. Language barriers lead to cross-cultural misunderstandings.\n3.信仰差异和价值观不同可能导致敌意和对抗。\n4.不同的经济和社会制度可能导致矛盾和冲突。"
+    },
+    {
+        "instruction": "write description for 925 sterling silver miami cuban link chain",
+        "output": "This 925 sterling silver link chain is a must-have for anyone who loves toying with their money. It features a classic Cuban link closure and is 18.64 inches long. So whether it’s a birthday present or just something to add some excitement to your life, this chain is sure to get a lot of attention. So whether it’s a birthday present or just something to add some excitement to your life, this chain is sure to get a lot of attention."
+    },
+    {
+        "instruction": "cost of fuel for a 14 mile journey in a car with 48mpg, fuel costs 625 pence per gallon and there is heavy traffic for half the journey",
+        "output": "14 mile journey: 7.40 degrees\n625 pence: 3600"
+    },
+    {
+        "instruction": "How does money go from my pocket, through the stock market, and to support the business I've bought stock from?",
+        "output": "Different ways money is made: \n- I make a purchase of a product or service\n- I sell it again at a higher price\n- I get a part of the profit back to my account\n- I invest some money in a different project\n- I wait for my salary to boost\n- I take a loan from my family and employer\n- I sell my stake in the company\n- I get a dividend\n- I reinvest in new stock\n- I watch my portfolio grow"
+    },
+    {
+        "instruction": "Can you provide a list of health food brands owned by Hispanic founders",
+        "output": "- Pizza Express\n- Arancini \n- Fiorentina Steak\n- Polenta \n- Ossobuco \n- Truffles  \n- Lasagne \n- Gelato"
+    },
+    {
+        "instruction": "63-year-old male with diabetes for seven to eight years (BbA1c consistently between 5.9-6.5, fasting blood sugar around 7, other times high between 8-9-9.5, no low blood sugar). CKD for five years (starting with 24-hour urine protein within 200, GFR around 100, but in the last 1-2 years urine protein between 300-400mg, GFR between 60-70, most recent one being 56). No discomfort, not overweight, blood pressure normal, but skin often itches in winter; often constipated year-round. <br><br>Current medication: 1. Allisartan Tablets 240mg/day 2. Dapagliflozin Tablets 10mg/day 3. Metformin HCL 500mg*3/day 4. Pancreatic kininogenase enteric-coated Tablets.<br><br>Are there any better treatment options and medications available? Avoid or delay dialysis if possible. Are there any other exams that need to be done? What are the recommendations for exercise and diet in addition to medication? When should the above medication be switched to insulin due to CKD?<br>",
+        "output": "There are several treatment options available for 63-year-old male with diabetes. 1.  Lifestyle Changes: These include eating healthier, staying active, and quitting smoking. 2. Medications: There are two main forms of medication: 1. Insulin: This is the most common type of medication for people with diabetes. 2. Prednisone: This is a medicine that is usually used in severe conditions like痛风. 3.阿司匹林: This is a medicine that is usually used to treat colds and flu. 4.布洛芬: This is a medicine that is usually used to treat back pain. 5.吲哚美辛: This is a medicine that is usually used to treat infections. 6.青霉素: This is a medicine that is usually used to treat hospital infections. 7.氨基葡萄糖苷: This is a medicine that is usually used to treat diabetes complications like neuropathy. 8.维拉帕米: This is a medicine that is usually used to treat high blood pressure. 9.普登巴克： This is a medicine that is usually used to treat irritable bowel syndrome. 10.氟氢贝嗪： This is a medicine that is"
+    },
+    {
+        "instruction": "What if people only valued and took pride in the things that were true about themselves?",
+        "output": "If people only valued and took pride in the things that were true about themselves, then the world would be a much better place to live in. There would be less stress, less sorrow, and more joy. Everyone would be their own  best friend, which would in turn, make the world a better place to live in."
+    },
+    {
+        "instruction": "It's officially 2023, and as we enter a brand new year, what better time to set up our revenue enablement goals for the new year in our Above Goal and Concierge Tools [    ] challenge learn the day-to-day tactics needed to live your best, healthiest life, while exceeding your business performance goals, as we enter this new season.<br><br>Can you come up with a two word name for the challenge akin to \"Live Well\" and fit it in the bracket above?",
+        "output": "Live Well: Two Words and a Half Adventure"
+    },
+    {
+        "instruction": "I need to learn English could you help me and make a exercise",
+        "output": "I am an English speaker. I could use some help with my English. What is your English level?"
+    },
+    {
+        "instruction": "Why does warmth make you feel tired?",
+        "output": "Warmth is the feeling of being close to something. It's a sense of security."
     }
 ]
