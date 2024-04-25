@@ -1,4 +1,5 @@
-gpu_vis="7"
+export CUDA_VISIBLE_DEVICES="0" \
+gpu_vis="0"
 MASTER_PORT=22346
 export PATH=/usr/local/cuda/bin:$PATH \
 export CPATH=/usr/local/cuda/include:$CPATH \
@@ -7,8 +8,9 @@ deepspeed \
 --include localhost:$gpu_vis \
 --master_port $MASTER_PORT \
 src/train/multi_gpu_sft.py \
---model_path /amax/zbl/toy_LIMA/Qwen/Qwen1.5-0.5B \
---data_file data/expanded_seed_tasks.jsonl \
+--model_path Qwen/Qwen1.5-0.5B \
+--data_file data/tasks.jsonl \
 --eval result_0.5 \
 --save_dir save_new \
+--epoch 10 \
 --batch_size 2 \
