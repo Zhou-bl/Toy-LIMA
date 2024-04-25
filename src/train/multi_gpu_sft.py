@@ -8,6 +8,7 @@ import argparse
 import tqdm
 import deepspeed
 import datasets
+from deepspeed import get_accelerator
 import matplotlib.pyplot as plt
 
 parser = argparse.ArgumentParser()
@@ -17,7 +18,7 @@ parser.add_argument('--save_dir', type=str, required=True, help='Directory to sa
 parser.add_argument('--system_prompt', type=str, default='data/sys_prompt.txt')
 parser.add_argument('--eval', type=str, required=True)
 parser.add_argument('--batch_size', type=int, default=8)
-parser.add_argument('--epoch', type=int, default=10)
+parser.add_argument('--epoch', type=int, default=3)
 parser.add_argument('--lr', type=float, default=1e-5)
 parser.add_argument("--local_rank", type=int, default=0)
 parser = deepspeed.add_config_arguments(parser)
@@ -143,7 +144,6 @@ def train(model, tokenizer, data):
     model.train()
     loss_step, loss_epoch = [], []
     for epoch in range(args.epoch):
-        eval(model, tokenizer, args.eval, epoch)
         print("[INFO] Epoch {} begin".format(epoch))
         epoch_loss = 0
         for batch in tqdm.tqdm(data):
@@ -156,8 +156,10 @@ def train(model, tokenizer, data):
             epoch_loss += loss_step[-1]
             model.backward(loss)
             model.step()
+            get_accelerator().empty_cache()
         loss_epoch.append(epoch_loss / len(data))
         print("[INFO] Epoch {} end, avg loss: {}".format(epoch, epoch_loss / len(data)))
+        eval(model, tokenizer, args.eval, epoch)
         model.save_pretrained(args.save_dir + '/epoch_{}'.format(epoch))
     
     plt.figure("Step loss")

@@ -6,7 +6,7 @@ import json
 from torch.utils.data import DataLoader
 import argparse
 import tqdm
-import deepspeed
+import datasets
 import matplotlib.pyplot as plt
 
 parser = argparse.ArgumentParser()
@@ -17,16 +17,15 @@ parser.add_argument('--system_prompt', type=str, default='data/sys_prompt.txt')
 parser.add_argument('--batch_size', type=int, default=8)
 parser.add_argument('--epoch', type=int, default=10)
 parser.add_argument('--lr', type=float, default=1e-5)
-parser.add_argument("--local_rank", type=int, default=0)
-parser = deepspeed.add_config_arguments(parser)
+parser.add_argument('--eval', type=str, required=True)
 
 args = parser.parse_args()
-
+device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 IGNORE_INDEX = -100
 
 def load_model(path):
     tokenizer = AutoTokenizer.from_pretrained(path)
-    model = AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16)
+    model = AutoModelForCausalLM.from_pretrained(path, torch_dtype=torch.bfloat16).to(device)
     if tokenizer.pad_token is None:
         print("[INFO] Add pad token to tokenizer.")
         tokenizer.pad_token = tokenizer.eos_token
@@ -103,7 +102,37 @@ def infer_test(model, tokenizer):
     print(tokenizer.decode(output[0], skip_special_tokens=True))
     return None
 
-def train(model, tokenizer, data):
+eval_set = datasets.load_dataset("tatsu-lab/alpaca_eval", "alpaca_eval")["eval"]
+
+def get_output(model, tokenizer, input):
+    # input is a list of strings
+    system_prompt = open(args.system_prompt, 'r').read()
+    input = system_prompt + '\n' + "User: " + input + "Assistant: "
+    input_ids = tokenizer(input, return_tensors="pt", padding=True, truncation=True).input_ids.cuda()
+    output_ids = model.generate(input_ids, 
+                                max_length=1024, 
+                                do_sample=True, 
+                                min_new_tokens=2, 
+                                max_new_tokens=256)
+    # print("input_ids:", input_ids)
+    # print("output_ids:", output_ids)
+    output_ids = output_ids[:,input_ids.shape[-1]:]
+    output = tokenizer.batch_decode(output_ids, skip_special_tokens=True)[0]
+    return output
+
+def eval(model, tokenizer, file, epoch):
+    model.eval()
+    json_list = []
+    for example in tqdm.tqdm(eval_set):
+        #print("example:", example)
+        #generate here is a placeholder for your models generations
+        instruction = example["instruction"]
+        output = get_output(model, tokenizer, instruction)
+        json_list.append({"instruction": instruction, "output": output})
+        with open(file+"/"+str(epoch)+".json", "w", encoding="utf-8") as f:
+            f.write(json.dumps(json_list, ensure_ascii=False, indent=4))
+
+def train(model, Tokenizer, data):
     optimizer = AdamW(model.parameters(), lr=args.lr)
     num_training_steps = len(data) * args.epoch
     lr_scheduler = get_scheduler(
@@ -116,10 +145,12 @@ def train(model, tokenizer, data):
     model.train()
     loss_step, loss_epoch = [], []
     for epoch in range(args.epoch):
+        if epoch != 0:
+            eval(model, Tokenizer, args.eval, epoch)
         print("[INFO] Epoch {} begin".format(epoch))
         epoch_loss = 0
         for batch in tqdm.tqdm(data):
-            batch = {k: v for k, v in batch.items()}
+            batch = {k: v.to(device) for k, v in batch.items()}
             outputs = model(**batch)
             loss = outputs.loss
             loss_step.append(loss.item())
@@ -130,7 +161,8 @@ def train(model, tokenizer, data):
             optimizer.zero_grad()
         loss_epoch.append(epoch_loss / len(data))
         print("[INFO] Epoch {} end, avg loss: {}".format(epoch, epoch_loss / len(data)))
-        model.save_pretrained(args.save_dir + '/epoch_{}'.format(epoch))
+        
+        #model.save_pretrained(args.save_dir + '/epoch_{}'.format(epoch))
     
     plt.figure("Step loss")
     plt.plot(loss_step)

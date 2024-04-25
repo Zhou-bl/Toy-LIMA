@@ -18,7 +18,7 @@ parser.add_argument('--data_file', type=str, required=True)
 parser.add_argument('--save_dir', type=str, required=True, help='Directory to save the model check point')
 parser.add_argument('--system_prompt', type=str, default='data/sys_prompt.txt')
 parser.add_argument('--batch_size', type=int, default=8)
-parser.add_argument('--epoch', type=int, default=10)
+parser.add_argument('--epoch', type=int, default=3)
 parser.add_argument('--lr', type=float, default=1e-5)
 parser.add_argument("--local_rank", default=-1, type=int)
 
