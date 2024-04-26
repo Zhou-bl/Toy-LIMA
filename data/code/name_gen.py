@@ -1,13 +1,10 @@
 import json
 import openai
-from openai import OpenAI
+from openai import ChatCompletion
 import tokenize
 import io
 
-client = OpenAI(
-    api_key="sk-baggqvfu5XAaZwtL779383E07eDe4b1589Bd99F6E88f8e8e",
-    base_url="https://lonlie.plus7.plus/v1"
-)
+openai.api_base = "https://lonlie.plus7.plus/v1"
 
 def extract_data_from_jsonl(file_path):
     res = ""
@@ -19,14 +16,20 @@ def extract_data_from_jsonl(file_path):
             res += '{\"' + name + '\", \"' + instruction + '\"}, '
     return res
 
-def query_openai(prompt, model="gpt-3.5-turbo"):
-    messages = [{"role": "user", "content": prompt}]
-    response = client.chat.completions.create(
-      	model=model,
-      	messages=messages,
-      	temperature=0.7,
+def query_openai(prompt):
+    client = ChatCompletion()
+    response = client.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {
+                "role": "user",
+                "content": prompt,
+            }
+        ],
+        temperature=0.8,
+        max_tokens=4096
     )
-    return response.choices[0].message.content
+    return response['choices'][0]['message']['content'].strip()
 
 def count_tokens(source_code):
     try:
@@ -45,16 +48,12 @@ def main():
     jsonl_file_path = './seed_tasks.jsonl'
     text = extract_data_from_jsonl(jsonl_file_path)
     
-#    print(convert(text))
-#    print(count_tokens(convert(text)))
-
-    prompt = "Following are 174 examples of {name, instruction} pairs. Please generate more pairs like these pairs. Please generate 326 pairs. Keep format the same. Here are example pairs: " + text
+    prompt = "Following are some examples of {name, instruction} pairs. Please generate more pairs like these pairs. Please generate more pairs!!! Keep format the same. Generate more pairs! generate more pairs! generate more pairs as long as you can! Be more creative! Following: " + text
 
     print("Querying:", prompt)
-    result = query_openai(prompt=prompt)
+    result = query_openai(prompt)
     print("Result:", result)
 
-# 执行主函数
 if __name__ == '__main__':
     main()
 
