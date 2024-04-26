@@ -8,9 +8,9 @@ deepspeed \
 --include localhost:$gpu_vis \
 --master_port $MASTER_PORT \
 src/train/multi_gpu_sft.py \
---model_path Qwen/Qwen1.5-0.5B \
+--model_path ~/toy_LIMA/Qwen/Qwen1.5-0.5B \
 --data_file data/tasks.jsonl \
---eval result_0.5 \
+--eval result_0.5_origin \
 --save_dir save_new \
---epoch 10 \
+--epoch 3 \
 --batch_size 2 \

@@ -1,0 +1,8 @@
+python infer.py --model_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen0.5B/checkpoint-200 --tokenizer_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen0.5B --file 2024-4-26/Qwen0.5B_new/checkpoint-200.json
+python infer.py --model_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen1.8B/checkpoint-400/ --tokenizer_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen1.8B/checkpoint-400/ --file 2024-4-26/Qwen1.8B/checkpoint-400.json
+python infer.py --model_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen1.8B/checkpoint-600/ --tokenizer_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen1.8B/checkpoint-600/ --file 2024-4-26/Qwen1.8B/checkpoint-600.json
+python infer.py --model_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen1.8B/checkpoint-800/ --tokenizer_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen1.8B/checkpoint-800/ --file 2024-4-26/Qwen1.8B/checkpoint-800.json
+
+python infer.py --model_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen0.5B/checkpoint-400 --tokenizer_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen0.5B/checkpoint-400 --file 2024-4-26/Qwen0.5B_new/checkpoint-400.json
+python infer.py --model_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen0.5B/checkpoint-600 --tokenizer_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen0.5B/checkpoint-600 --file 2024-4-26/Qwen0.5B_new/checkpoint-600.json
+python infer.py --model_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen0.5B/checkpoint-800 --tokenizer_path /amax/zbl/toy_LIMA/LLaMA-Factory/checkpoints/qwen0.5B/checkpoint-800 --file 2024-4-26/Qwen0.5B_new/checkpoint-800.json

@@ -1,0 +1,12 @@
+{
+    "onwdata_highQ":{
+      "file_name": "expanded_1500.jsonl",
+      "columns": {
+        "prompt": "instruction",
+        "query": "input",
+        "response": "output",
+        "messages": "None",
+        "system": "system"
+      }
+    }
+}

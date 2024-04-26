@@ -159,7 +159,7 @@ def train(model, tokenizer, data):
             get_accelerator().empty_cache()
         loss_epoch.append(epoch_loss / len(data))
         print("[INFO] Epoch {} end, avg loss: {}".format(epoch, epoch_loss / len(data)))
-        #eval(model, tokenizer, args.eval, epoch)
+        eval(model, tokenizer, args.eval, epoch+1)
         model.save_pretrained(args.save_dir + '/epoch_{}'.format(epoch))
     
     plt.figure("Step loss")
