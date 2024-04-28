@@ -1,0 +1,9 @@
+default:
+    - api_key: "sk-veekCwuDj5pbPYWH927a3e7bD20c4e42900d48889a6022Be"
+      organization: "<your 1st organization ID>"
+
+    - api_key: "sk-veekCwuDj5pbPYWH927a3e7bD20c4e42900d48889a6022Be"
+      organization: "<your 2nd organization ID>"
+    
+    - api_key: "sk-9HqbXzY2lbtHwjTS0585Ea7956554d1aBe34744d570a6976"
+      organization: "<your 3rd organization ID>"
